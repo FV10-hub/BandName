@@ -7,8 +7,8 @@ class Band {
 
   //esto regresa un nuevo objeto de este tipo pasandole un MAP
   factory Band.fromMap(Map<String, dynamic> obj) => Band(
-    id: obj['id'],
-    name: obj['name'],
-    votes: obj['votes']
+    id: obj.containsKey('id') ?  obj['id'] : 'non-id',
+    name: obj.containsKey('name') ?  obj['name'] : 'non-name',
+    votes: obj.containsKey('votes') ?  obj['votes'] : 'non-votes'
   );   
 }
